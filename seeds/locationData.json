@@ -1,0 +1,22 @@
+[
+    {
+        "name": "MJ's",
+        "address": "?",
+        "phone": "+14154212337",
+        "url": "https://www.mjsrestaurant.com/Tinton-Falls/menu/"
+    },
+
+    {
+        "name": "Namkeen",
+        "address": "410 Main St, Metuchen, NJ 08840",
+        "phone": "+12016361730",
+        "url": "https://www.eatnamkeen.com/"
+    },
+
+    {
+        "name": "Blu Grotto Restaurant",
+        "address": "200 Port Au Peck Ave, Oceanport, NJ 07757",
+        "phone": "+17325717900",
+        "url": "https://www.monmouthpark.com/restaurant/blu-grotto/"
+    }
+]
