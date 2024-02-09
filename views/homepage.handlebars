@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage</title>
-</head>
-<body>
+<div class="project-container">
+<div class="card-header col-md-12 text-center">
+    <h2>
+        location
+    </h2>
+</div>
 
-<!-- Handlebars template -->
-<script id="home-template" type="text/x-handlebars-template">
-    <header>
-        <h1>{{ title }}</h1>
-    </header>
-    <section>
-        <p>{{ description }}</p>
-    </section>
-    <ul>
-        {{#each features}}
-            <li>{{ this }}</li>
-        {{/each}}
-    </ul>
-</script>
+</div>
+
+
+{{#each locations as |location|}}
+  <div class="project col-md-4">
+    <p>
+      {{location.id}}.
+      {{location.name}}.
+      {{location.address}}.
+      {{location.phone}}.
+      {{location.url}}.
+      {{location.user_id}}
+    </p>
+  </div>
+  {{/each}}
+
 
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
 
 <!-- Your script to render the template -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+{{!-- <script>
+    //document.addEventListener('DOMContentLoaded', function () {
         // Sample data
         var data = {
             title: 'My Homepage',
@@ -36,15 +36,15 @@
         };
 
         // Get the template source
-        var source = document.getElementById('home-template').innerHTML;
+       // var source = document.getElementById('home-template').innerHTML;
 
         // Compile the template
         var template = Handlebars.compile(source);
 
         // Insert the rendered HTML into the DOM
-        document.body.innerHTML = template(data);
+       // document.body.innerHTML = template(data);
     });
-</script>
+</script> --}}
 
 </body>
 </html>
