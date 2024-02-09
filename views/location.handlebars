@@ -1,14 +1,66 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Page</title>
+</head>
+<body>
+
+<!-- Handlebars template -->
+<script id="location-template" type="text/x-handlebars-template">
+    <header>
+        <h1>{{ name }}</h1>
+        <p>{{ city }}, {{ country }}</p>
+    </header>
+    <section>
+        <p>{{ description }}</p>
+    </section>
+    <ul>
+        {{#each amenities}}
+            <li>{{ this }}</li>
+        {{/each}}
+    </ul>
+</script>
+
+<!-- Include Handlebars library -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+
+<!-- Your script to render the template -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sample data for a location
+        var locationData = {
+        "name": "MJ's",
+        "address": "?",
+        "phone": "+14154212337",
+        "url": "https://www.mjsrestaurant.com/Tinton-Falls/menu/",
+        "user_id": "1"
+    },
+
+    {
+        "name": "Namkeen",
+        "address": "410 Main St, Metuchen, NJ 08840",
+        "phone": "+12016361730",
+        "url": "https://www.eatnamkeen.com/",
+        "user_id": "2"
+    },
+
+    {
+        "name": "Blu Grotto Restaurant",
+        "address": "200 Port Au Peck Ave, Oceanport, NJ 07757",
+        "phone": "+17325717900",
+        "url": "https://www.monmouthpark.com/restaurant/blu-grotto/",
+        "user_id": "3"
+    };
+
+        // Get the template source
+        var source = document.getElementById('location-template').innerHTML;
+
+        // Compile the template
+        var template = Handlebars.compile(source);
+
+        // Insert the rendered HTML into the DOM
+        document.body.innerHTML = template(locationData);
+    });
+</script>

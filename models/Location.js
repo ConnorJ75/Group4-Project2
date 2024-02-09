@@ -15,24 +15,21 @@ Location.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    address: {
       type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    phone: {
+      type: DataTypes.STRING,
       allowNull: false,
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      allowNull: false,
     },
   },
   {

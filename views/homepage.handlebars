@@ -1,24 +1,50 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<div class="project-container">
+<div class="card-header col-md-12 text-center">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
+        location
     </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
 </div>
-{{/each}}
+
+</div>
+
+
+{{#each locations as |location|}}
+  <div class="project col-md-4">
+    <p>
+      {{location.id}}.
+      {{location.name}}.
+      {{location.address}}.
+      {{location.phone}}.
+      {{location.url}}.
+      {{location.user_id}}
+    </p>
+  </div>
+  {{/each}}
+
+
+<!-- Include Handlebars library -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+
+<!-- Your script to render the template -->
+{{!-- <script>
+    //document.addEventListener('DOMContentLoaded', function () {
+        // Sample data
+        var data = {
+            title: 'My Homepage',
+            description: 'Welcome to my awesome homepage!',
+            features: ['Feature 1', 'Feature 2', 'Feature 3']
+        };
+
+        // Get the template source
+       // var source = document.getElementById('home-template').innerHTML;
+
+        // Compile the template
+        var template = Handlebars.compile(source);
+
+        // Insert the rendered HTML into the DOM
+       // document.body.innerHTML = template(data);
+    });
+</script> --}}
+
+</body>
+</html>
