@@ -1,7 +1,7 @@
 // restaurant variables
 
 const apiKey = '5tkVDO8SKlJuurEYCWCave8z96kny6KhwC0AJ_NtIcb8zc_Vx2rZmO7l9X5q5aeYaKUiLvVftUYxk6NHVAbIDsjFr04yewipKMAnKrClMvxq2WlEWCsD7RRBRYzBZXYx';
-const url = `https://api.yelp.com/v3/businesses/search?term=delis&latitude=40.298325&longitude=-74.618637`;
+const url = 'https://api.yelp.com/v3/businesses/search/phone?phone=%2B17325717900';
 const options = {
   method: 'GET',
   headers: {
