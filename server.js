@@ -12,7 +12,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({  });
+const hbs = exphbs.create({ 
+  helpers: {
+      formatPhoneNumber: function(phone){
+        var cleaned =  ('' + phone).replace(/\D/g, '');
+        var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+          var intlCode = (match[1] ? '+1 ' : ' ');
+          return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+        }
+        return null;
+      }
+  }
+});
 
 const sess = {
   secret: 'Secret',
