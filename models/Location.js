@@ -20,7 +20,7 @@ Location.init(
       allowNull: false,
     },
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
     url: {
