@@ -1,50 +1,32 @@
 <div class="project-container">
-<div class="card-header col-md-12 text-center">
+<div class="card-header col-md-12">
     <h2>
-        location
+        Locations we recommend
     </h2>
 </div>
 
 </div>
 
+<div>
+  {{#each locations as |location|}}
+      {{!-- {{location.id}}. --}}
+      {{!-- {{location.address}}. --}}
+      {{!-- {{location.url}}.
+      {{location.user_id}} --}}
 
-{{#each locations as |location|}}
-  <div class="project col-md-4">
-    <p>
-      {{location.id}}.
-      {{location.name}}.
-      {{location.address}}.
-      {{location.phone}}.
-      {{location.url}}.
-      {{location.user_id}}
-    </p>
-  </div>
+  <div class="card text-white bg-primary mb-4" style="max-width: 18rem;">
+    {{!-- <div class="card-header">{{location.name}}</div> --}}
+    <a href="/location/{{location.id}}" class = "card-header">{{location.name}}</a>
+    <div class="card-body">
+      <p class="card-text">{{location.phone}}</p>
+    </div>
+</div>
   {{/each}}
+</div>
+
 
 
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
-
-<!-- Your script to render the template -->
-{{!-- <script>
-    //document.addEventListener('DOMContentLoaded', function () {
-        // Sample data
-        var data = {
-            title: 'My Homepage',
-            description: 'Welcome to my awesome homepage!',
-            features: ['Feature 1', 'Feature 2', 'Feature 3']
-        };
-
-        // Get the template source
-       // var source = document.getElementById('home-template').innerHTML;
-
-        // Compile the template
-        var template = Handlebars.compile(source);
-
-        // Insert the rendered HTML into the DOM
-       // document.body.innerHTML = template(data);
-    });
-</script> --}}
-
 </body>
 </html>

@@ -31,6 +31,10 @@ Location.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
