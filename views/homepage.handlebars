@@ -18,7 +18,7 @@
     {{!-- <div class="card-header">{{location.name}}</div> --}}
     <a href="/location/{{location.id}}" class = "card-header">{{location.name}}</a>
     <div class="card-body">
-      <p class="card-text">{{location.phone}}</p>
+      <p class="card-text">{{formatPhoneNumber location.phone}}</p>
     </div>
 </div>
   {{/each}}

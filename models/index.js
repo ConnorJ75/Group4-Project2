@@ -5,6 +5,8 @@ User.hasMany(Location, {
   onDelete: 'CASCADE'
 });
 
-Location.belongsTo(User, {});
+Location.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
 module.exports = { User, Location };

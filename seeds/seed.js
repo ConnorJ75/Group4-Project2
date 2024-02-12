@@ -14,7 +14,8 @@ const seedDatabase = async () => {
 
   for (const location of locationData) {
     await Location.create({
-      ...location
+      ...location,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
