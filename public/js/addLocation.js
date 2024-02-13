@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
     const locationAddress = document.querySelector('#location-address').value.trim();
     const locationURL = document.querySelector('#location-url').value.trim();
   
-    if (name && needed_funding && description) {
+    if (name && locationPhone && locationAddress && locationURL) {
       const response = await fetch(`/api/locations`, {
         method: 'POST',
         body: JSON.stringify({ name, locationPhone, locationAddress, locationURL }),
