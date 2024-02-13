@@ -20,7 +20,7 @@ Location.init(
       allowNull: false,
     },
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
     url: {
@@ -29,6 +29,10 @@ Location.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    image_url: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
