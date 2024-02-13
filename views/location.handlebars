@@ -3,64 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location Page</title>
+    <title>{{ name }}</title>
 </head>
 <body>
 
-<!-- Handlebars template -->
-<script id="location-template" type="text/x-handlebars-template">
     <header>
         <h1>{{ name }}</h1>
-        <p>{{ city }}, {{ country }}</p>
+        
     </header>
     <section>
-        <p>{{ description }}</p>
+        <br>
+        <p>{{formatPhoneNumber phone }}</p>
+        <p>{{ address }}</p>
+        <p>{{ url }}</p>
+        <img src={{ image_url }} alt="{{ name }}"
+        height="400">
     </section>
-    <ul>
-        {{#each amenities}}
-            <li>{{ this }}</li>
-        {{/each}}
-    </ul>
-</script>
+    
+    {{!-- <script>
+        const apiKey = 
+        '5tkVDO8SKlJuurEYCWCave8z96kny6KhwC0AJ_NtIcb8zc_Vx2rZmO7l9X5q5aeYaKUiLvVftUYxk6NHVAbIDsjFr04yewipKMAnKrClMvxq2WlEWCsD7RRBRYzBZXYx';
+        const num = {{ phone }};
+        const options = {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${apiKey}`
+            } 
+        };
+        
+        fetch(`https://api.yelp.com/v3/businesses/search/phone?phone=%2B${num}`, options)
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => console.error('error:' + err));
+        
+    </script> --}}
 
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
-
-<!-- Your script to render the template -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Sample data for a location
-        var locationData = {
-        "name": "MJ's",
-        "address": "?",
-        "phone": "+14154212337",
-        "url": "https://www.mjsrestaurant.com/Tinton-Falls/menu/",
-        "user_id": "1"
-    },
-
-    {
-        "name": "Namkeen",
-        "address": "410 Main St, Metuchen, NJ 08840",
-        "phone": "+12016361730",
-        "url": "https://www.eatnamkeen.com/",
-        "user_id": "2"
-    },
-
-    {
-        "name": "Blu Grotto Restaurant",
-        "address": "200 Port Au Peck Ave, Oceanport, NJ 07757",
-        "phone": "+17325717900",
-        "url": "https://www.monmouthpark.com/restaurant/blu-grotto/",
-        "user_id": "3"
-    };
-
-        // Get the template source
-        var source = document.getElementById('location-template').innerHTML;
-
-        // Compile the template
-        var template = Handlebars.compile(source);
-
-        // Insert the rendered HTML into the DOM
-        document.body.innerHTML = template(locationData);
-    });
-</script>
+</body>
