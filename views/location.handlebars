@@ -1,43 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }}</title>
-</head>
-<body>
 
-    <header>
-        <h1>{{ name }}</h1>
-        
-    </header>
-    <section>
-        <br>
-        <p>{{formatPhoneNumber phone }}</p>
-        <p>{{ address }}</p>
-        <p>{{ url }}</p>
-        <img src={{ image_url }} alt="{{ name }}"
-        height="400">
-    </section>
+<header>
+    <h1>{{ name }}</h1>
+</header>
+<section id="spotInfo">
+    <br>
+    <a href="https://maps.google.com/?q={{ address }}" target="_blank"> {{ address }} </a>
+    <a href="tel: {{ formatPhoneNumber phone }}"> {{formatPhoneNumber phone }} </a>
+    <a href={{ url }} target="_blank">Website Link</a>
+</section>
+
+{{!-- script to fetch a custom image for the location based off the phone number --}}
+<script>
+    const apiKey = 
+    '5tkVDO8SKlJuurEYCWCave8z96kny6KhwC0AJ_NtIcb8zc_Vx2rZmO7l9X5q5aeYaKUiLvVftUYxk6NHVAbIDsjFr04yewipKMAnKrClMvxq2WlEWCsD7RRBRYzBZXYx';
+    const options = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${apiKey}`
+        } 
+    };
+
+    const targetContainer = document.getElementById("spotInfo");
+
+    const num = {{ phone }};
+    const altName = `${{{ name }}}`;
     
-    {{!-- <script>
-        const apiKey = 
-        '5tkVDO8SKlJuurEYCWCave8z96kny6KhwC0AJ_NtIcb8zc_Vx2rZmO7l9X5q5aeYaKUiLvVftUYxk6NHVAbIDsjFr04yewipKMAnKrClMvxq2WlEWCsD7RRBRYzBZXYx';
-        const num = {{ phone }};
-        const options = {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${apiKey}`
-            } 
-        };
-        
-        fetch(`https://api.yelp.com/v3/businesses/search/phone?phone=%2B${num}`, options)
-        .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.error('error:' + err));
-        
-    </script> --}}
+    fetch(`https://cryptic-castle-96421.herokuapp.com/https://api.yelp.com/v3/businesses/search/phone?phone=%2B${num}`, options)
+    .then(response => {
+        if (response.ok){
+            return response.json();
+        }
+        throw new Error('Could not grab location information!');
+    })
+    .then(function (data){
+        imageLink = data.businesses[0].image_url;
+        console.log("Found image link: " + imageLink);
+        newImage = document.createElement('img');
+        newImage.src = imageLink;
+        newImage.alt = altName;
+        newImage.height = "400";
+        targetContainer.appendChild(newImage);
+    })
+    .catch(err => console.error('error:' + err));
+    
+</script>
 
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
-</body>
