@@ -22,3 +22,27 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.ResultsR1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  text-shadow: 1px 1px 1px black;
+  
+  
+  
+
+}
+.ResultsR2 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  text-shadow: 1px 1px 1px black;
+  font-size: x-large;
+
+  
+
+
+}
