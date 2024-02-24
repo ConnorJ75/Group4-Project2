@@ -2,6 +2,7 @@ const User = require('./User');
 const Location = require('./Location');
 
 User.hasMany(Location, {
+  foreignKey: "user_id",
   onDelete: 'CASCADE'
 });
 

@@ -3,43 +3,43 @@
         "name": "MJ's",
         "address": "19 Summerhill Rd, Spotswood, NJ 08884",
         "phone": "+14154212337",
-        "url": "https://www.mjsrestaurant.com/Tinton-Falls/menu/",
-        "user_id": "1"
+        "url": "https://www.mjsrestaurant.com/Tinton-Falls/menu/"
+        
     },
 
     {
         "name": "Namkeen",
         "address": "410 Main St, Metuchen, NJ 08840",
         "phone": "+12016361730",
-        "url": "https://www.eatnamkeen.com/",
-        "user_id": "2"
+        "url": "https://www.eatnamkeen.com/"
+        
     },
     {
         "name": "Blu Grotto Restaurant",
         "address": "200 Port Au Peck Ave, Oceanport, NJ 07757",
         "phone": "+17325717900",
-        "url": "https://www.monmouthpark.com/restaurant/blu-grotto/",
-        "user_id": "3"
+        "url": "https://www.monmouthpark.com/restaurant/blu-grotto/"
+        
     },
     {
         "name": "Per Se",
         "address": "10 Columbus Cir, New York, NY 10019",
         "phone": "+12128239335",
-        "url": "https://www.thomaskeller.com/perseny",
-        "user_id": "3"
+        "url": "https://www.thomaskeller.com/perseny"
+        
     },
     {
         "name": "Crown Shy",
         "address": "70 Pine Street Ground Floor, New York, NY 10005",
         "phone": "+12125171932",
-        "url": "https://www.crownshy.nyc/",
-        "user_id": "4"
+        "url": "https://www.crownshy.nyc/"
+        
     },
     {
         "name": "Grimaldi's",
         "address": "656 6th Ave, New York, NY 10011",
         "phone": "+16464845665",
-        "url": "https://www.grimaldismenu.com/",
-        "user_id": "1"
+        "url": "https://www.grimaldismenu.com/"
+        
     }
 ]

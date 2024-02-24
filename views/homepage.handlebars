@@ -1,26 +1,26 @@
 <div class="project-container">
-<div class="card-header col-md-12">
+  <div class="card-header col-md-12">
     <h2>
-        Locations we recommend
+      Locations we recommend
     </h2>
-</div>
+  </div>
 
 </div>
 
 <div>
   {{#each locations as |location|}}
-      {{!-- {{location.id}}. --}}
-      {{!-- {{location.address}}. --}}
-      {{!-- {{location.url}}.
-      {{location.user_id}} --}}
+  {{!-- {{location.id}}. --}}
+  {{!-- {{location.address}}. --}}
+  {{!-- {{location.url}}.
+  {{location.user_id}} --}}
 
   <div class="card text-white bg-primary mb-4" style="max-width: 18rem;">
     {{!-- <div class="card-header">{{location.name}}</div> --}}
-    <a href="/location/{{location.id}}" class = "card-header">{{location.name}}</a>
+    <a href="/location/{{location.id}}" class="card-header">{{location.name}}</a>
     <div class="card-body">
       <p class="card-text">{{formatPhoneNumber location.phone}}</p>
     </div>
-</div>
+  </div>
   {{/each}}
 </div>
 
@@ -29,4 +29,5 @@
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
 </body>
+
 </html>
