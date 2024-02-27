@@ -20,7 +20,7 @@ Location.init(
       allowNull: false,
     },
     phone: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     url: {
@@ -29,12 +29,11 @@ Location.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    image_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    }
   },
   {
     sequelize,
