@@ -1,7 +1,7 @@
 <header>
     <h1>{{ name }}</h1>
 </header>
-<section id="spotInfo" >
+<section id="spotInfo">
     <br>
     <a href="https://maps.google.com/?q={{ address }}" target="_blank"> {{ address }} </a>
     <a href="tel: {{ formatPhoneNumber phone }}"> {{formatPhoneNumber phone }} </a>
@@ -44,14 +44,13 @@
         .catch(err => console.error('error:' + err));
 
 </script>
+
+
+
 <div class="col-md-4 location-list">
     <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
 </div>
 
-{{!-- <div class="col-md-4">
-    <button class="btn btn-sm btn-danger" data-id="{{location.id}}">DELETE</button>
-</div> --}}
-
-<script type="text/javascript" src="/js/addLocation.js"></script>
+<script type="text/javascript" src="/js/deleteLocation.js"></script>
 <!-- Include Handlebars library -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
